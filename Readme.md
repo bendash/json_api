@@ -6,7 +6,7 @@ Provides an Interface for data output in JSON format. Support for files (FAL) an
 
 ## Users Manual ##
 
-This extension requires the 'routing' extension written by Xavier Perseguers. 
+This extension requires the [routing](http://typo3.org/extensions/repository/view/routing) extension written by Xavier Perseguers. 
 After installing, you may do some URL Rewriting for the routing eID Query Parameter as suggested in the [Documentation](http://docs.typo3.org/typo3cms/extensions/routing/Introduction/Index.html) of the routing extension:
 Be sure to add the line at the top of your htaccess.
 
@@ -46,8 +46,8 @@ See examples below to understand how to call the API properly
 
 ### Configuration ###
 
-The configuration is done via TypoScript Setup. The extension provides a configuration for FAL files
-Any Extbase Model you want to retrieve through the API must be configured first.
+The configuration is done via TypoScript.
+The extension provides a configuration for FAL files, however, any Extbase Model you want to retrieve through the API must be configured first.
 The configuration syntax is based on the configuration for extbase's JsonView.
 
 ```ts
@@ -72,7 +72,7 @@ plugin.tx_jsonapi {
             }
           }
         }
-        # Example: Model from ext news
+        # Example: Model of ext news
         Tx_News_Domain_Model_News {
           _only = uid, pid, istopnews, title, teaser, bodytext, datetime, falMedia, falRelatedFiles
           _descend {
