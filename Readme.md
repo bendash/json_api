@@ -67,7 +67,7 @@ plugin.tx_jsonapi {
             # property3 is an array, so descend all entries
             property3 {
               _descendAll {
-                # at this place we can use _only, _descend, and _exclude again
+                # here we can use _only, _descend, and _exclude again
               }
             }
           }
