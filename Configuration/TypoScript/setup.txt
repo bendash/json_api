@@ -1,0 +1,16 @@
+plugin.tx_jsonapi {
+	settings {
+		output {
+			config {
+				TYPO3\CMS\Core\Resource\File {
+					_only = uid, identifier, properties, publicUrl
+					_descend {
+						properties {
+							_only = uid, pid, storage, extension, mime_type, name, size, creation_date, title, description, alternative, categories, visible, status, keywords, caption, creator, creator_tool, publisher, source, location_country, location_region, location_city, latitude, longitude, ranking, note, color_space, unit
+						}
+					}
+				}
+			}
+		}
+	}
+}

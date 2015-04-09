@@ -1,0 +1,17 @@
+-
+  name: 'list action'
+  uriPattern: 'list/{path}'
+  defaults:
+    '@package':    'WorldDirect.json_api'
+    '@plugin':     'Pi1'
+    '@controller': 'Api'
+	'@action':     'list'
+	
+-
+  name: 'single action'
+  uriPattern: 'single/{path}/{uid}'
+  defaults:
+    '@package':    'WorldDirect.json_api'
+    '@plugin':     'Pi1'
+    '@controller': 'Api'
+    '@action':     'single'

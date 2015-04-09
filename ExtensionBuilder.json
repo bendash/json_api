@@ -1,0 +1,37 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Provides a Interface for raw data output",
+        "emConf": {
+            "category": "services",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": true,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "1.0"
+        },
+        "extensionKey": "interface",
+        "name": "Interface",
+        "originalExtensionKey": "interface",
+        "persons": [
+            {
+                "company": "World Direct eBusiness Solutions GmbH",
+                "email": "ben.walch@world-direct.at",
+                "name": "Ben Walch",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "WorldDirect"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2015-03-30 01:52",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}
