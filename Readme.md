@@ -7,10 +7,9 @@ Provides an Interface for data output in JSON format. Support for files (FAL) an
 ## Users Manual ##
 
 This extension requires the [routing](http://typo3.org/extensions/repository/view/routing) extension written by Xavier Perseguers. 
-After installing, you may do some URL Rewriting for the routing eID Query Parameter as suggested in the [Documentation](http://docs.typo3.org/typo3cms/extensions/routing/Introduction/Index.html) of the routing extension:
+After installing, you may do some URL Rewriting for the routing eID Query Parameter as suggested in the [Documentation](http://docs.typo3.org/typo3cms/extensions/routing/Introduction/Index.html) of the routing extension.
 Be sure to add the line at the top of your htaccess.
 
-This can be done via a specific URI pattern consisiting of two or three parts.
 The URI pattern for calling the API looks as follows
 
 _action/path/arguments_
@@ -27,6 +26,7 @@ The path part has different possible values. See the table below to understand t
 | news-news                  | Tx_News_Domain_Model_News              |
 | yag-album                  | Tx_News_Domain_Model_Album             |
 | NN-nn_address-person       | NN\NnAddress\Domain\Model\Person       |
+| files                      | TYPO3\CMS\Core\Resource\File           |
 
 The single action additionally requires an argument - the uid of the record you want to fetch.
 
