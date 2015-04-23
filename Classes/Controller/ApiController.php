@@ -199,7 +199,7 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	
 	protected function fixOutputConfig($config, $level = 0) {
 		foreach ($config as $key => $value) {
-			if ($key == '_only') {
+			if ($key == '_only' || $key == '_exclude') {
 				$config[$key] = GeneralUtility::trimExplode(',', $value);
 			} else if (is_array($value)) {
 				$config[$key] = $this->fixOutputConfig($value, $level+1);
