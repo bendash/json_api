@@ -87,6 +87,8 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		
 		$this->settings['output']['config'] = $this->fixOutputConfig($this->settings['output']['config']);
 		
+        $this->response->setHeader('Content-Type', 'application/json; charset=UTF-8', TRUE);
+        
 	}
 	
 	/**
