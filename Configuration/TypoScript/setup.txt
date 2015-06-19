@@ -1,5 +1,11 @@
 plugin.tx_jsonapi {
 	settings {
+		list {
+			# Default settings, can be overwritten by GET parameters
+			limit = 500
+			orderBy = uid
+			orderDirection = ASC
+		}
 		output {
 			config {
 				TYPO3\CMS\Core\Resource\File {
