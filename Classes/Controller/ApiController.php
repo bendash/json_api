@@ -61,7 +61,6 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	protected $defaultViewConfiguration = array(
 		'value' => array(
 			'_descendAll' => array(
-				
 			)
 		)
 	);
@@ -81,14 +80,14 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		
 		$this->settings['directory'] = isset($directory) ? $directory : $this->settings['directory'];
 		$this->settings['list']['storagePages'] = isset($storagePages) ? GeneralUtility::trimExplode(',', $storagePages) : $this->settings['list']['storagePages'];
-		$this->settings['list']['limit'] = $limit > 0 ? $limit : intval($this->settings['list']['limit']);
+		$this->settings['list']['limit'] = $limit > 0 ? $limit : $this->settings['list']['limit'];
 		$this->settings['list']['orderBy'] = isset($orderBy) ? $orderBy : $this->settings['list']['orderBy'];
 		$this->settings['list']['orderDirection'] = isset($orderDirection) ? $orderDirection : $this->settings['list']['orderDirection'];
 		
 		$this->settings['output']['config'] = $this->fixOutputConfig($this->settings['output']['config']);
 		
-    $this->response->setHeader('Content-Type', 'application/json; charset=UTF-8', TRUE);
-      
+		$this->response->setHeader('Content-Type', 'application/json; charset=UTF-8', TRUE);
+    
 	}
 	
 	/**
@@ -101,15 +100,12 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	public function listAction($path) {
 		
 		$modelClass = '';
-		$data = array();
+		$data = [];
 		
 		if (strtoupper($path) == 'FILES') {
 			$modelClass = 'TYPO3\CMS\Core\Resource\File';
 			$folder = $this->getTargetFolder();
-			$data = $folder->getFiles();
-			if (isset($this->settings['list']['limit'])) {
-				$data = array_slice($data, 0, $this->settings['list']['limit']);
-			}
+			$data = array_values($folder->getFiles(0, $this->settings['list']['limit']));
 		} else {
 			$modelClass = $this->resolvePathToModelClass($path);
 			
