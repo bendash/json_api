@@ -2,7 +2,7 @@ plugin.tx_jsonapi {
 	settings {
 		list {
 			# Default settings, can be overwritten by GET parameters
-			limit = 500
+			limit = 250
 			orderBy = uid
 			orderDirection = ASC
 		}

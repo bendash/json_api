@@ -80,14 +80,14 @@ class ApiController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		
 		$this->settings['directory'] = isset($directory) ? $directory : $this->settings['directory'];
 		$this->settings['list']['storagePages'] = isset($storagePages) ? GeneralUtility::trimExplode(',', $storagePages) : $this->settings['list']['storagePages'];
-		$this->settings['list']['limit'] = $limit > 0 ? $limit : $this->settings['list']['limit'];
+		$this->settings['list']['limit'] = $limit > 0 ? $limit : intval($this->settings['list']['limit']);
 		$this->settings['list']['orderBy'] = isset($orderBy) ? $orderBy : $this->settings['list']['orderBy'];
 		$this->settings['list']['orderDirection'] = isset($orderDirection) ? $orderDirection : $this->settings['list']['orderDirection'];
 		
 		$this->settings['output']['config'] = $this->fixOutputConfig($this->settings['output']['config']);
 		
 		$this->response->setHeader('Content-Type', 'application/json; charset=UTF-8', TRUE);
-    
+	
 	}
 	
 	/**
