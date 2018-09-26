@@ -5,7 +5,7 @@
     '@package':    'WorldDirect.json_api'
     '@plugin':     'Pi1'
     '@controller': 'Api'
-	'@action':     'list'
+    '@action':     'list'
 	
 -
   name: 'single action'

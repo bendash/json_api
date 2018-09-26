@@ -1,4 +1,7 @@
 plugin.tx_jsonapi {
+	features {
+		requireCHashArgumentForActionArguments = 0
+	}
 	settings {
 		list {
 			# Default settings, can be overwritten by GET parameters
